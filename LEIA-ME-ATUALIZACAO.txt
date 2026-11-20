@@ -1,0 +1,17 @@
+SUBZERO — VERSÃO UNIFICADA
+
+Esta pasta combina as páginas existentes com as páginas novas do pacote expandido.
+
+CSS:
+- O CSS original foi preservado integralmente.
+- As regras complementares das páginas novas foram acrescentadas ao final de assets/css/sz.css.
+- Todas as páginas utilizam o mesmo CSS pelo includes/header.php.
+
+BANCO:
+- Banco: subzero.
+- NÃO importe banco.sql se já houver dados que deseja preservar: ele apaga e recria o banco.
+- As páginas executam garantir_schema_expandido($pdo), que cria as tabelas e colunas novas sem apagar os registros existentes.
+- Para instalação nova, banco.sql pode ser importado normalmente.
+
+Páginas novas:
+time.php, artilharia.php, jogadores.php, sumula.php e premios.php.

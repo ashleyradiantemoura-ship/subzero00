@@ -1,0 +1,2078 @@
+/* ===== SUBZERO — tema escuro (home, times, login, acesso negado) ===== */
+:root{
+  --ink:#eaf4ff;
+  --ice:#4fc3f7;
+  --ice-strong:#29b6f6;
+  --deep:#061423;
+  --deep-2:#0a2036;
+  --panel:#0e2a44;
+  --panel-2:#113352;
+  --line:rgba(120,190,255,.16);
+  --muted:#9db9d4;
+  --gold:#ffd166;
+  --radius:16px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  background:var(--deep);
+  color:var(--ink);
+  line-height:1.55;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.hidden{display:none!important}
+
+/* ===== Buttons ===== */
+.btn{
+  font-family:inherit;font-weight:700;font-size:.95rem;
+  border:none;cursor:pointer;border-radius:999px;
+  padding:.7rem 1.4rem;letter-spacing:.02em;
+  transition:transform .18s ease, box-shadow .25s ease, background-color .2s ease, color .2s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--ice{background:linear-gradient(180deg,var(--ice),var(--ice-strong));color:#021018;box-shadow:0 8px 24px rgba(41,182,246,.35)}
+.btn--ice:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(41,182,246,.5)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn--ghost:hover{background:rgba(120,190,255,.1)}
+.btn--outline{background:rgba(255,255,255,.04);color:var(--ink);border:1px solid rgba(180,220,255,.4);backdrop-filter:blur(6px)}
+.btn--outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.btn--lg{padding:.95rem 1.9rem;font-size:1rem}
+.btn--full{width:100%;margin-top:.4rem}
+
+/* ===== Brand ===== */
+.brand{display:flex;align-items:center;gap:.5rem;font-weight:800}
+.brand__mark{color:var(--ice);font-size:1.25rem}
+.brand__name{font-family:'Anton',sans-serif;letter-spacing:.14em;font-size:1.25rem}
+
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(6,20,35,.72);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav__inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:1.5rem;padding:.9rem 1.4rem}
+.nav__links{display:flex;gap:1.6rem;margin-left:1rem;font-weight:500;color:var(--muted)}
+.nav__links a{position:relative;padding:.2rem 0;transition:color .2s}
+.nav__links a:hover{color:var(--ink)}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--ice);transition:width .25s}
+.nav__links a:hover::after{width:100%}
+.nav__actions{margin-left:auto;display:flex;align-items:center;gap:.6rem}
+.auth-user{display:flex;align-items:center;gap:.6rem}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(180deg,var(--ice),var(--ice-strong));color:#021018;display:grid;place-items:center;font-weight:800}
+.auth-user__name{font-weight:600;font-size:.9rem}
+.nav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;margin-left:.5rem}
+.nav__burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1549598145-86b354509082?crop=entropy&cs=srgb&fm=jpg&q=85&w=1920') center/cover no-repeat;filter:saturate(1.05)}
+.hero__scrim{position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 20% 20%, rgba(6,20,35,.35), transparent 60%),
+  linear-gradient(90deg, rgba(6,20,35,.92) 0%, rgba(6,20,35,.7) 45%, rgba(6,20,35,.3) 100%),
+  linear-gradient(0deg, rgba(6,20,35,.95), transparent 55%)}
+.hero__content{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:4rem 1.4rem;width:100%}
+.hero__eyebrow{color:var(--ice);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;margin-bottom:.4rem}
+.hero__title{position:relative;font-family:'Anton',sans-serif;font-size:clamp(3.5rem,13vw,10rem);line-height:.9;letter-spacing:.02em;color:var(--ink);text-shadow:0 10px 40px rgba(0,0,0,.5)}
+.hero__ghost{position:absolute;top:.16em;left:.02em;color:transparent;-webkit-text-stroke:2px rgba(120,190,255,.22);z-index:-1}
+.hero__sub{max-width:34rem;color:var(--muted);font-size:1.05rem;margin:1.3rem 0 2rem}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero__stats{display:flex;gap:2.4rem;margin-top:2.6rem}
+.stat{display:flex;flex-direction:column}
+.stat__num{font-family:'Anton',sans-serif;font-size:2rem;color:var(--ice)}
+.stat__label{color:var(--muted);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* ===== Sections ===== */
+.section{max-width:var(--maxw);margin:0 auto;padding:5.5rem 1.4rem}
+.section__head{margin-bottom:2.6rem}
+.section__title{font-family:'Anton',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:.02em}
+.section__desc{color:var(--muted);margin-top:.5rem;max-width:40rem}
+
+/* ===== Teams ===== */
+.teams{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.team-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s ease, box-shadow .25s ease, border-color .25s}
+.team-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45);border-color:rgba(120,190,255,.4)}
+.team-card__img{height:200px;background-size:cover;background-position:center;position:relative}
+.team-card__img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(14,42,68,.9))}
+.team-card__body{padding:1.1rem 1.2rem 1.4rem}
+.team-card__tag{display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ice);background:rgba(79,195,247,.12);padding:.25rem .6rem;border-radius:999px;margin-bottom:.6rem}
+.team-card__body h3{font-size:1.25rem;margin-bottom:.3rem}
+.team-card__body p{color:var(--muted);font-size:.9rem}
+
+/* ===== Footer ===== */
+.footer{border-top:1px solid var(--line);background:var(--deep-2);padding:2.4rem 1.4rem}
+.footer__inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer p{color:var(--muted);font-size:.85rem}
+
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+
+/* ===== Responsive ===== */
+@media (max-width:980px){
+  .teams{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .nav__links{display:none}
+  .nav__burger{display:flex}
+  .nav__links.is-open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(6,20,35,.98);padding:1rem 1.4rem;border-bottom:1px solid var(--line)}
+  .hero__stats{gap:1.4rem}
+  .auth-user__name{display:none}
+}
+@media (max-width:480px){
+  .teams{grid-template-columns:1fr}
+  .nav__actions .btn{padding:.6rem 1rem;font-size:.85rem}
+}
+
+/* ===== Ajustes para as páginas PHP ===== */
+.btn{display:inline-block;text-align:center}
+.btn-primary{background:linear-gradient(180deg,var(--ice),var(--ice-strong));color:#021018;box-shadow:0 8px 24px rgba(41,182,246,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(41,182,246,.5)}
+.btn-block{width:100%}
+.btn-sm{padding:.45rem 1rem;font-size:.82rem}
+.btn-danger{background:transparent;color:#ff8a8a;border:1px solid rgba(255,138,138,.5)}
+.btn-danger:hover{background:#d03b3b;color:#fff;border-color:#d03b3b}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding-left:1.4rem;padding-right:1.4rem}
+.brand-accent{color:var(--ice)}
+.nav__links a.active{color:var(--ink)}
+.nav__links a.active::after{width:100%}
+.nav__links .badge{font-size:.65rem;padding:.12rem .55rem;border-radius:999px;background:rgba(79,195,247,.16);color:var(--ice);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.site-main{min-height:60vh}
+
+/* Páginas internas (times, acesso negado) */
+.inner .page-hero{position:relative;padding:4.2rem 0 1.4rem;background:radial-gradient(120% 120% at 15% 0%,rgba(79,195,247,.14),transparent 60%)}
+.inner .eyebrow{color:var(--ice);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem;margin-bottom:.4rem}
+.inner .page-title{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,8vw,5.5rem);line-height:.95;letter-spacing:.02em;font-weight:400;text-transform:uppercase}
+.inner .page-lead{color:var(--muted);max-width:36rem;margin-top:.8rem}
+.inner .section{max-width:var(--maxw);padding:2rem 1.4rem 5rem}
+.inner .section-title{font-family:'Anton',sans-serif;font-size:2rem;margin-bottom:.6rem}
+.alert{padding:.9rem 1.1rem;border-radius:12px;margin-bottom:1.4rem;font-weight:600;border:1px solid;font-size:.95rem}
+.alert-success{background:rgba(31,157,107,.14);border-color:rgba(31,157,107,.5);color:#7de3b8}
+.alert-error{background:rgba(208,59,59,.14);border-color:rgba(208,59,59,.5);color:#ff9a9a}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin-bottom:1.6rem}
+.card-title{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.02em;font-size:1.5rem;margin-bottom:1rem}
+.form{display:flex;flex-direction:column;gap:1rem}
+.form-inline{flex-direction:row;flex-wrap:wrap;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:170px}
+.field-grow{flex:2}
+.field span{font-size:.8rem;color:var(--muted);font-weight:600;letter-spacing:.04em}
+input,select{font:inherit;padding:.75rem .9rem;background:var(--deep-2);border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+input:focus,select:focus{outline:none;border-color:var(--ice);box-shadow:0 0 0 3px rgba(79,195,247,.18)}
+.empty-state{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.team-grid .team-card{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.2rem}
+.team-badge{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;color:#021018;background:linear-gradient(180deg,var(--ice),var(--ice-strong))}
+.team-info{flex:1}
+.team-info h3{font-size:1.1rem}
+.team-info span{font-size:.85rem;color:var(--muted)}
+
+/* Login */
+.login-wrap{position:relative;min-height:calc(100vh - 66px);display:grid;place-items:center;padding:3rem 1.2rem;overflow:hidden}
+.login-card{position:relative;z-index:2;width:100%;max-width:430px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.login-title{font-family:'Anton',sans-serif;font-weight:400;font-size:2rem;letter-spacing:.02em}
+.login-desc{color:var(--muted);margin:.3rem 0 1.3rem;font-size:.9rem}
+.login-hint{margin-top:1.4rem;padding:.9rem 1rem;background:var(--deep-2);border:1px solid var(--line);border-radius:10px;font-size:.82rem;color:var(--muted)}
+.login-hint p{margin:.15rem 0}
+code{background:rgba(79,195,247,.14);padding:1px 6px;border-radius:4px;color:var(--ice)}
+
+/* Entrada ao rolar */
+.js .reveal{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
+@media (max-width:760px){.nav__links .nav-user-badge{display:none}}
+.login-wrap .hero__bg,.login-wrap .hero__scrim{z-index:0}
+.btn--ghost.btn{display:inline-block}
+
+/* =====================================================================
+   HOME — novo visual (hero com foto + carrossel de times)
+   Escopo: body.home, para não afetar as páginas internas.
+   ===================================================================== */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.home{
+  --royal:#1450b8;
+  --royal-deep:#0d3a8c;
+  --frost:#f1f6fc;
+  --teal:#2a9bb0;
+  background:var(--frost);
+  font-family:'Oswald','Archivo',system-ui,sans-serif;
+}
+
+/* ----- Menu sobre o hero: links à esquerda, logo no centro, links à direita ----- */
+.home .nav--home{position:absolute;top:0;left:0;right:0;background:none;backdrop-filter:none;border-bottom:0}
+.home .nav--home .nav__inner{
+  max-width:none;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:1.3rem clamp(1.2rem,2.2vw,2.2rem);
+}
+.home .nav--home .brand{grid-column:2;grid-row:1;justify-self:center}
+.home .nav--home .brand__name{font-family:'Archivo Black','Archivo',sans-serif;font-size:clamp(1.5rem,2.3vw,2rem);letter-spacing:.04em;color:#fff}
+.home .nav--home .nav__links{display:contents}
+.home .nav__group{display:flex;align-items:center;gap:clamp(1.2rem,2vw,2rem);grid-row:1}
+.home .nav__group--left{grid-column:1;justify-self:start}
+.home .nav__group--right{grid-column:3;justify-self:end}
+.home .nav--home .nav__links a{
+  margin:0;color:#fff;font-weight:500;font-size:1rem;letter-spacing:.03em;text-transform:uppercase;
+}
+.home .nav--home .nav__links a::after{background:#fff}
+.home .nav--home .nav__login{border:1.5px solid #fff;padding:.35rem 1rem}
+.home .nav--home .nav__login::after{display:none}
+.home .nav--home .nav__login:hover{background:#fff;color:var(--royal)}
+.home .nav--home .auth-user{display:flex;align-items:center;gap:.5rem}
+.home .nav--home .avatar{background:#fff;color:var(--royal)}
+.home .nav--home .auth-user__name{color:#fff;font-size:.95rem;text-transform:uppercase}
+.home .nav--home .nav__burger{grid-column:1;grid-row:1;justify-self:start;margin:0}
+.home .nav--home .nav__burger span{background:#fff}
+
+/* ----- Hero ----- */
+.home .site-main{min-height:0}
+.home .hero{
+  position:relative;display:block;min-height:max(100svh,520px);overflow:hidden;
+  background:#1457c4 url('../img/hero-subzero.jpg') center 30%/cover no-repeat;
+}
+.home .hero::before{ /* leve escurecido no topo para o menu ler bem */
+  content:"";position:absolute;inset:0 0 auto 0;height:9rem;pointer-events:none;
+  background:linear-gradient(180deg,rgba(9,48,130,.7),rgba(9,48,130,0));
+}
+.home .hero::after{ /* transição suave do gelo para o azul da base */
+  content:"";position:absolute;inset:auto 0 0 0;height:42%;pointer-events:none;
+  background:linear-gradient(0deg,rgba(10,52,140,.78),rgba(10,52,140,0));
+}
+.home .hero__foot{
+  position:absolute;z-index:2;left:0;right:0;bottom:0;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;
+  padding:0 clamp(1.2rem,2.2vw,2.2rem) clamp(1.6rem,3.4vw,3rem);
+}
+.home .hero__sub{
+  max-width:19rem;margin:0 0 1.3rem;color:#fff;font-size:1.1rem;font-weight:500;line-height:1.3;
+  text-transform:uppercase;letter-spacing:.01em;
+}
+.home .hero__btn{
+  display:inline-block;background:#fff;color:var(--royal);font-weight:600;font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.03em;padding:1rem 2rem;
+  transition:background-color .2s,color .2s;
+}
+.home .hero__btn:hover{background:var(--royal-deep);color:#fff}
+.home .hero__stats{display:flex;gap:0;margin:0}
+.home .stat{padding:0 1.8rem;border-left:1px solid rgba(255,255,255,.45)}
+.home .stat:first-child{border-left:0}
+.home .stat:last-child{padding-right:0}
+.home .stat__num{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(3rem,5.4vw,4.6rem);line-height:1;color:#fff}
+.home .stat__label{margin-top:.45rem;color:#fff;font-size:1rem;font-weight:500;line-height:1.2;letter-spacing:.02em;text-transform:uppercase}
+
+/* ----- Seção de times (carrossel) ----- */
+.gear{
+  position:relative;padding:clamp(3rem,6vw,5.5rem) 0 clamp(3.5rem,7vw,6rem);
+  background:
+    radial-gradient(60% 50% at 12% 8%,rgba(255,255,255,.95),transparent 70%),
+    radial-gradient(50% 40% at 90% 70%,rgba(200,222,245,.8),transparent 70%),
+    var(--frost);
+}
+.gear__head{max-width:72rem;margin:0 auto;padding:0 1.4rem;text-align:center}
+.gear__title{
+  font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.02;letter-spacing:.005em;color:var(--royal);
+}
+.gear__stage{position:relative;margin-top:clamp(2rem,4vw,3.2rem)}
+.gear__track{
+  display:flex;gap:clamp(.9rem,1.6vw,1.5rem);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:.4rem clamp(1.2rem,3vw,2.2rem);scrollbar-width:none;
+}
+.gear__track::-webkit-scrollbar{display:none}
+.gear__track:focus-visible{outline:3px solid var(--teal);outline-offset:-3px}
+
+.gcard{
+  position:relative;flex:0 0 clamp(250px,29vw,420px);aspect-ratio:3/4.2;scroll-snap-align:start;
+  overflow:hidden;color:#fff;background:var(--royal);isolation:isolate;
+}
+.gcard__img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;transition:transform .5s ease}
+.gcard::before{ /* véu azul gelado sobre a foto */
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(35,85,185,.55) 0%,rgba(60,120,210,.18) 45%,rgba(20,70,175,.9) 100%);
+}
+.gcard:hover .gcard__img{transform:scale(1.04)}
+.gcard__name{
+  position:absolute;top:1.1rem;left:1.2rem;right:1.2rem;
+  font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1;letter-spacing:.01em;
+  text-shadow:0 2px 14px rgba(8,40,110,.35);overflow-wrap:anywhere;
+}
+.gcard__note{
+  position:absolute;left:1.2rem;bottom:1.3rem;max-width:62%;
+  font-size:.9rem;font-weight:500;line-height:1.25;text-transform:uppercase;letter-spacing:.02em;
+}
+.gcard__go{
+  position:absolute;right:1rem;bottom:1rem;width:2.9rem;height:2.9rem;display:grid;place-items:center;
+  background:#fff;color:var(--royal);transition:background-color .2s,color .2s;
+}
+.gcard__go svg{width:1.3rem;height:1.3rem}
+.gcard__go:hover,.gcard__go:focus-visible{background:var(--royal-deep);color:#fff}
+
+.gear__arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:3.6rem;height:3.6rem;border:0;border-radius:50%;cursor:pointer;
+  display:grid;place-items:center;background:var(--teal);color:#0d3a8c;
+  box-shadow:0 6px 20px rgba(13,58,140,.3);transition:transform .18s,background-color .2s,opacity .2s;
+}
+.gear__arrow svg{width:1.7rem;height:1.7rem}
+.gear__arrow:hover{background:#38b4c9}
+.gear__arrow:active{transform:translateY(-50%) scale(.95)}
+.gear__arrow:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
+.gear__arrow[disabled]{opacity:.35;cursor:default}
+.gear__arrow--prev{left:clamp(.6rem,2vw,1.6rem)}
+.gear__arrow--next{right:clamp(.6rem,2vw,1.6rem)}
+.home .gear .empty-state{color:var(--royal)}
+
+/* rodapé azul na home, combinando com o hero */
+.home .footer{background:var(--royal-deep);border-top:0}
+.home .footer .brand__mark{color:#fff}
+.home .footer .brand__name{font-family:'Archivo Black','Archivo',sans-serif;letter-spacing:.04em}
+.home .footer p{color:#cfe0f7}
+
+/* ----- Responsivo da home ----- */
+@media (max-width:900px){
+  .home .nav--home .nav__inner{padding:1rem 1.2rem}
+  .home .nav--home .nav__burger{display:flex}
+  .home .nav--home .nav__links{display:none}
+  .home .nav--home .nav__links.is-open{
+    display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+    background:rgba(9,48,130,.96);padding:.6rem 1.2rem 1.2rem;
+  }
+  .home .nav--home .nav__links.is-open .nav__group{display:flex;flex-direction:column;align-items:flex-start;gap:0;justify-self:stretch}
+  .home .nav--home .nav__links.is-open a{padding:.8rem 0;width:100%;border-bottom:1px solid rgba(255,255,255,.14)}
+  .home .nav--home .nav__links.is-open .nav__login{border:0;padding:.8rem 0}
+  .home .nav--home .auth-user{padding:.8rem 0}
+}
+@media (max-width:760px){
+  .home .hero{min-height:0;padding-top:calc(3.5rem + 74vw + 1.5rem);background-size:100% auto;background-position:center 3.5rem}
+  .home .hero::after{top:calc(3.5rem + 46vw);bottom:0;height:auto;background:linear-gradient(180deg,rgba(20,87,196,0),#1457c4 28vw)}
+  .home .hero__foot{position:relative;padding-top:0}
+  .home .hero__foot{flex-direction:column;align-items:flex-start;gap:1.6rem}
+  .home .hero__sub{max-width:24rem}
+  .home .hero__stats{align-self:flex-start}
+  .home .stat{padding:0 1.3rem}
+  .home .stat:first-child{padding-left:0}
+  .gear__arrow{width:3rem;height:3rem}
+  .gcard{flex-basis:78vw}
+}
+@media (prefers-reduced-motion:reduce){.gear__track{scroll-behavior:auto}.gcard__img{transition:none}}
+
+
+/* =========================================================
+   PÁGINAS INTERNAS — identidade visual da HOME
+   Mantém formulários, tabelas e ações com suas funcionalidades.
+   ========================================================= */
+.inner{
+  --royal:#1450b8;--royal-deep:#0d3a8c;--frost:#f1f6fc;--teal:#2a9bb0;
+  background:var(--frost);color:#102b4d;font-family:'Oswald','Archivo',sans-serif;
+  min-height:100vh;
+}
+.inner .site-main{background:var(--frost);min-height:65vh}
+.inner .nav--inner{position:sticky;top:0;background:rgba(13,58,140,.97);backdrop-filter:blur(14px);border:0;box-shadow:0 5px 22px rgba(9,48,130,.14)}
+.inner .nav--inner .nav__inner{max-width:var(--maxw);justify-content:space-between;padding:.9rem 1.4rem}
+.inner .nav--inner .brand__name{font-family:'Archivo Black',sans-serif;color:#fff;letter-spacing:.04em}
+.inner .nav--inner .nav__links{margin:0;align-items:center;gap:clamp(.8rem,1.7vw,1.5rem);color:#eaf3ff}
+.inner .nav--inner .nav__links a{color:#fff;text-transform:uppercase;font-size:.88rem;letter-spacing:.035em}
+.inner .nav--inner .nav__links a.active,.inner .nav--inner .nav__links a:hover{color:#bdeeff}
+.inner .nav--inner .nav__links a::after{background:#fff}
+.inner .nav--inner .nav__burger span{background:#fff}
+.inner .nav--inner .avatar{background:#fff;color:var(--royal)}
+.inner .auth-user__name{color:#fff}
+.inner .page-hero{position:relative;padding:clamp(3rem,6vw,5rem) 0 2rem;background:linear-gradient(135deg,#e8f2ff,#f7faff 58%,#dceafa)}
+.inner .page-hero-overlay{display:none}
+.inner .page-hero-content{position:relative}
+.inner .eyebrow{color:var(--teal);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.8rem}
+.inner .page-title{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.8rem,7vw,5rem);line-height:.98;color:var(--royal);letter-spacing:.015em}
+.inner .page-title .outline{color:transparent;-webkit-text-stroke:1.5px var(--royal)}
+.inner .page-lead{color:#526b88;max-width:44rem;margin-top:.8rem;font-size:1.05rem}
+.inner .section{max-width:var(--maxw);padding:2.4rem 1.4rem 5rem}
+.inner .hero-stats{display:flex;gap:0;margin-top:1.8rem}
+.inner .hero-stats>div{display:flex;flex-direction:column;padding:0 1.5rem;border-left:1px solid #b6cbe3}
+.inner .hero-stats>div:first-child{padding-left:0;border-left:0}
+.inner .hero-stats strong{font-family:'Oswald',sans-serif;font-size:2.2rem;color:var(--royal);line-height:1.1}
+.inner .hero-stats span{color:#617b98;text-transform:uppercase;font-size:.8rem}
+.inner .card,.inner .confronto-card,.inner .table-wrap,.inner .legend,.inner .empty-state{
+  background:#fff;border:1px solid #d6e4f3;border-radius:14px;box-shadow:0 10px 28px rgba(24,70,125,.08)
+}
+.inner .card{padding:1.5rem;margin-bottom:1.5rem}
+.inner .card-title,.inner .section-title,.inner .legend h3{font-family:'Oswald',sans-serif;color:var(--royal);font-size:1.55rem;font-weight:700;text-transform:uppercase}
+.inner .form{gap:1rem}
+.inner .field span{color:#536e8d}
+.inner input,.inner select{background:#f7faff;border:1px solid #c6d8eb;border-radius:8px;color:#173858}
+.inner input:focus,.inner select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(42,155,176,.15)}
+.inner .btn{border-radius:5px;text-transform:uppercase;letter-spacing:.04em}
+.inner .btn-primary,.inner .btn--ice{background:var(--royal);color:#fff;box-shadow:0 6px 16px rgba(20,80,184,.2)}
+.inner .btn-primary:hover,.inner .btn--ice:hover{background:var(--royal-deep)}
+.inner .btn-danger{color:#b42332;border-color:#e8aab1}
+.inner .btn-danger:hover{background:#b42332;color:#fff}
+.inner .btn-ghost{color:var(--royal);border:1px solid #b8cde5;background:#f7faff}
+.inner .btn-outline{color:var(--royal);border:1px solid #8eadd1;background:#fff}
+.inner .team-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.inner .team-card{display:flex;align-items:center;gap:1rem;padding:1.1rem;background:#fff;border:1px solid #d6e4f3;border-radius:14px;box-shadow:0 8px 22px rgba(24,70,125,.07)}
+.inner .team-badge{background:var(--royal);color:#fff;border-radius:8px}
+.inner .team-info h3,.inner .team-info span{color:#183b60}
+.inner .table-wrap{overflow-x:auto;padding:.35rem}
+.inner .rank-table{width:100%;border-collapse:collapse;min-width:700px;text-align:center}
+.inner .rank-table th{background:var(--royal);color:#fff;padding:.9rem .65rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.inner .rank-table td{padding:.85rem .65rem;border-bottom:1px solid #e4edf7;color:#284766}
+.inner .rank-table tbody tr:nth-child(even){background:#f4f8fd}
+.inner .rank-table tbody tr.is-top{background:#e7f2ff}
+.inner .rank-table .col-team{text-align:left;font-weight:700;color:#153b67}
+.inner .rank-table .col-pts{font-weight:800;color:var(--royal)}
+.inner .pos-badge{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:#dbeaff;color:var(--royal);font-weight:800}
+.inner .sg-pos{color:#16835d!important}.inner .sg-neg{color:#c03948!important}
+.inner .legend{padding:1.2rem 1.5rem;margin-top:1.4rem;color:#526b88}
+.inner .legend ul{padding-left:1.2rem;margin-top:.6rem}
+.inner .confronto-list{display:grid;gap:1rem}
+.inner .confronto-card{padding:1.2rem 1.4rem}
+.inner .confronto-head,.inner .confronto-body,.inner .actions-row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.inner .confronto-body{padding:1.3rem .3rem}
+.inner .side{flex:1;text-align:center}.inner .team-name{font-weight:700;color:#173e68;text-transform:uppercase}
+.inner .score{display:flex;align-items:center;gap:.65rem;font-family:'Oswald',sans-serif;color:var(--royal);font-size:2.2rem;font-weight:700}
+.inner .score-sep{color:#8ca7c4}
+.inner .status-tag,.inner .decisao-tag{display:inline-block;padding:.25rem .7rem;border-radius:99px;background:#e5f1ff;color:var(--royal);font-size:.75rem;font-weight:700;text-transform:uppercase}
+.inner .status-confirmado{background:#e0f5eb;color:#16734d}.inner .status-placar-salvo{background:#fff2d8;color:#946000}
+.inner .confronto-actions{border-top:1px solid #e3edf7;padding-top:.9rem}
+.inner .confronto-actions summary{cursor:pointer;list-style:none;display:inline-block}
+.inner .actions-panel{padding-top:1rem}.inner .form-score{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.inner .score-inputs{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.inner .score-inputs input{width:78px}
+.inner .actions-row{justify-content:flex-start;margin-top:.8rem}
+.inner .alert{border-radius:8px}
+.inner .login-wrap{min-height:calc(100vh - 150px);background:linear-gradient(135deg,#e7f1ff,#f7faff)}
+.inner .login-wrap .hero__bg{opacity:.14;filter:blur(2px)}
+.inner .login-wrap .hero__scrim{background:linear-gradient(135deg,rgba(20,80,184,.15),rgba(241,246,252,.8))}
+.inner .login-card{background:#fff;border:1px solid #d6e4f3;box-shadow:0 20px 50px rgba(20,80,184,.14)}
+.inner .login-title{font-family:'Oswald',sans-serif;color:var(--royal);text-transform:uppercase}
+.inner .login-desc,.inner .login-hint{color:#5d7591}
+.inner .login-hint{background:#f1f6fc;border-color:#d6e4f3}
+.inner .footer{background:var(--royal-deep);border-top:0}
+.inner .footer .brand__name{font-family:'Archivo Black',sans-serif;color:#fff;letter-spacing:.04em}
+.inner .footer p{color:#d5e6fb}
+@media(max-width:900px){
+ .inner .nav--inner .nav__burger{display:flex}
+ .inner .nav--inner .nav__links{display:none}
+ .inner .nav--inner .nav__links.is-open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(13,58,140,.99);padding:.7rem 1.3rem 1rem}
+ .inner .nav--inner .nav__links.is-open a{padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.15)}
+ .inner .nav--inner .auth-user{padding:.7rem 0}
+}
+@media(max-width:600px){
+ .inner .form-inline{flex-direction:column;align-items:stretch}
+ .inner .hero-stats>div{padding:0 .8rem}
+ .inner .confronto-body{gap:.3rem}
+ .inner .score{font-size:1.6rem;gap:.35rem}
+ .inner .team-name{font-size:.85rem}
+ .inner .confronto-card{padding:1rem}
+}
+
+
+/* LOGIN SUBZERO — fundo de hóquei e cartão de vidro (somente login) */
+body.inner .login-wrap {
+  min-height:calc(100svh - 76px); padding:clamp(2rem,5vw,5rem) 1rem;
+  background:#10243a; isolation:isolate;
+}
+body.inner .login-wrap .hero__bg {
+  inset:0; opacity:1; filter:none;
+  background-image:url('../img/login-hockey.jpg');
+  background-position:center 46%; background-size:cover; background-repeat:no-repeat;
+  transform:scale(1.015);
+}
+body.inner .login-wrap .hero__scrim {
+  inset:0; background:linear-gradient(120deg,rgba(5,22,42,.48),rgba(10,31,53,.28) 48%,rgba(5,22,42,.55));
+}
+body.inner .login-card {
+  position:relative; z-index:2; width:100%; max-width:450px;
+  padding:clamp(1.65rem,4vw,2.6rem); border-radius:26px;
+  background:rgba(10,29,49,.55); border:1px solid rgba(255,255,255,.42);
+  -webkit-backdrop-filter:blur(22px) saturate(145%); backdrop-filter:blur(22px) saturate(145%);
+  box-shadow:0 28px 80px rgba(0,13,31,.36),inset 0 1px 0 rgba(255,255,255,.22);
+  color:#fff;
+}
+body.inner .login-card::before {
+  content:'SUBZERO  /  ACESSO'; display:block; margin-bottom:1rem;
+  font-size:.72rem; font-weight:800; letter-spacing:.22em; color:#a9e8ff;
+}
+body.inner .login-title {
+  font-family:'Oswald',sans-serif; font-size:clamp(2.2rem,5vw,2.8rem);
+  font-weight:600; letter-spacing:.02em; line-height:1.15; color:#fff;
+}
+body.inner .login-desc {color:rgba(235,246,255,.84);font-size:.94rem;margin:.65rem 0 1.7rem}
+body.inner .login-card .field {gap:.5rem}
+body.inner .login-card .field span {color:#f0f8ff;font-size:.84rem;font-weight:700}
+body.inner .login-card input {
+  width:100%; min-height:49px; padding:.8rem 1rem;
+  background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.35);
+  border-radius:12px; color:#fff; transition:border-color .2s,background .2s,box-shadow .2s;
+}
+body.inner .login-card input::placeholder {color:rgba(235,245,255,.62)}
+body.inner .login-card input:focus {
+  outline:none; background:rgba(255,255,255,.2); border-color:#83ddff;
+  box-shadow:0 0 0 3px rgba(89,205,255,.18);
+}
+body.inner .login-card .btn-block {
+  width:100%; min-height:50px; margin-top:.45rem; border-radius:12px;
+  background:linear-gradient(115deg,#42c8ff,#1684ed); color:#06223c;
+  box-shadow:0 10px 26px rgba(10,126,225,.25); font-weight:800;
+}
+body.inner .login-card .btn-block:hover {
+  background:linear-gradient(115deg,#78dcff,#42a9ff); transform:translateY(-2px);
+}
+body.inner .login-hint {
+  margin-top:1.65rem; padding:1rem; background:rgba(5,23,43,.3);
+  border:1px solid rgba(255,255,255,.2); border-radius:12px;
+  color:rgba(240,248,255,.84); font-size:.78rem; overflow-wrap:anywhere;
+}
+body.inner .login-hint strong {color:#fff}
+body.inner .login-hint code {color:#b8edff;background:rgba(255,255,255,.1)}
+body.inner .login-card .alert-error {color:#fff;background:rgba(130,21,38,.48);border-color:rgba(255,165,165,.6)}
+@media(max-width:520px) {
+  body.inner .login-wrap {padding:2rem .9rem}
+  body.inner .login-card {border-radius:21px;padding:1.6rem 1.25rem}
+  body.inner .login-wrap .hero__bg {background-position:43% center}
+}
+
+/* Login: imagem cinematográfica enviada e vidro mais cristalino */
+body.inner .login-wrap .hero__bg {
+  background-image:url('../img/login-hockey.png');
+  background-position:center center;
+  transform:none;
+}
+body.inner .login-wrap .hero__scrim {
+  background:linear-gradient(125deg,rgba(5,20,38,.13),rgba(7,25,47,.04) 50%,rgba(5,20,38,.19));
+}
+body.inner .login-card {
+  background:rgba(9,29,53,.22);
+  border:1px solid rgba(255,255,255,.68);
+  -webkit-backdrop-filter:blur(10px) saturate(135%);
+  backdrop-filter:blur(10px) saturate(135%);
+  box-shadow:0 25px 75px rgba(4,21,42,.23),inset 0 1px 0 rgba(255,255,255,.45);
+}
+body.inner .login-card input {
+  background:rgba(6,25,47,.25);
+  border-color:rgba(255,255,255,.65);
+}
+body.inner .login-card .login-hint {
+  background:rgba(7,26,47,.22);
+  border-color:rgba(255,255,255,.38);
+}
+body.inner .login-card .login-title,
+body.inner .login-card .login-desc,
+body.inner .login-card .field span,
+body.inner .login-card .login-hint {text-shadow:0 1px 9px rgba(0,12,30,.65)}
+
+
+/* ===== SUBZERO 2026 — VISUAL UNIFICADO: ARENA + VIDRO ===== */
+:root{--glass:rgba(8,27,51,.42);--glass-line:rgba(220,244,255,.38);--glass-shadow:0 22px 55px rgba(0,13,35,.3)}
+body.inner:not(.login-page){background:#061a30 url('../img/arena-background.webp') center center/cover fixed no-repeat;color:#f3faff}
+body.inner:not(.login-page)::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(120deg,rgba(2,13,31,.64),rgba(3,28,56,.35) 55%,rgba(2,14,34,.62))}
+body.inner:not(.login-page)>*{position:relative;z-index:1}
+body.inner:not(.login-page) .site-main{background:transparent}
+body.inner:not(.login-page) .nav{background:rgba(4,19,39,.65);border-bottom:1px solid rgba(214,240,255,.24);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 5px 25px rgba(0,9,25,.14)}
+body.inner:not(.login-page) .footer{background:rgba(3,15,31,.72);border-top:1px solid rgba(210,239,255,.22);backdrop-filter:blur(12px)}
+body.inner:not(.login-page) .page-hero{background:transparent;padding:clamp(2.5rem,5vw,4.5rem) 0 1.2rem}
+body.inner:not(.login-page) .page-hero-content{padding:1.4rem 1.8rem 1.8rem;border:1px solid var(--glass-line);border-radius:24px;background:rgba(6,27,51,.33);backdrop-filter:blur(13px) saturate(130%);-webkit-backdrop-filter:blur(13px) saturate(130%);box-shadow:var(--glass-shadow)}
+body.inner:not(.login-page) .eyebrow,body.inner:not(.login-page) .section-kicker{color:#7feaff;font-weight:800;letter-spacing:.17em;font-size:.72rem}
+body.inner:not(.login-page) .page-title{color:#fff;text-shadow:0 5px 25px rgba(0,15,35,.45);overflow-wrap:anywhere}
+body.inner:not(.login-page) .page-title .outline{color:transparent;-webkit-text-stroke:1.4px #b7efff}
+body.inner:not(.login-page) .page-lead{color:#d5eaff}
+body.inner:not(.login-page) .hero-stats{flex-wrap:wrap;gap:10px}
+body.inner:not(.login-page) .hero-stats>div{padding:12px 18px!important;border:1px solid rgba(220,244,255,.25)!important;border-radius:15px;background:rgba(7,32,59,.38);min-width:125px}
+body.inner:not(.login-page) .hero-stats strong{color:#fff}
+body.inner:not(.login-page) .hero-stats span{color:#bcdcf2}
+body.inner:not(.login-page) .card,body.inner:not(.login-page) .confronto-card,body.inner:not(.login-page) .team-card,body.inner:not(.login-page) .table-wrap,body.inner:not(.login-page) .legend,body.inner:not(.login-page) .empty-state,body.inner:not(.login-page) .guide-card{background:var(--glass);border:1px solid var(--glass-line);border-radius:22px;box-shadow:var(--glass-shadow);backdrop-filter:blur(15px) saturate(130%);-webkit-backdrop-filter:blur(15px) saturate(130%);color:#f2f9ff}
+body.inner:not(.login-page) .card-title,body.inner:not(.login-page) .section-title,body.inner:not(.login-page) .legend h3,body.inner:not(.login-page) .guide-card h3{color:#fff}
+body.inner:not(.login-page) .team-info h3,body.inner:not(.login-page) .team-info span,body.inner:not(.login-page) .team-name,body.inner:not(.login-page) .score{color:#fff}
+body.inner:not(.login-page) .field span{color:#e5f5ff}
+body.inner input,body.inner select{background:rgba(3,24,46,.48);border:1px solid rgba(222,244,255,.4);border-radius:12px;color:#fff}
+body.inner input::placeholder{color:#b9d2e4}
+body.inner select option{color:#142d46;background:#f5faff}
+body.inner input:focus,body.inner select:focus{border-color:#62e5ff;box-shadow:0 0 0 3px rgba(58,214,255,.2)}
+body.inner:not(.login-page) .btn{border-radius:12px}
+body.inner:not(.login-page) .btn-primary,body.inner:not(.login-page) .btn--ice{background:linear-gradient(110deg,#23d4ef,#0874d7);color:#fff;box-shadow:0 9px 24px rgba(0,138,236,.22)}
+body.inner:not(.login-page) .btn-ghost,body.inner:not(.login-page) .btn-outline{background:rgba(195,233,255,.12);border:1px solid rgba(230,246,255,.4);color:#fff}
+body.inner:not(.login-page) .team-badge{background:rgba(14,131,212,.38);border-radius:14px}
+body.inner:not(.login-page) .status-tag,body.inner:not(.login-page) .decisao-tag{background:rgba(127,222,255,.2);color:#e8faff}
+body.inner:not(.login-page) .status-confirmado{background:rgba(27,165,110,.27);color:#c6ffe1}
+body.inner:not(.login-page) .status-placar-salvo{background:rgba(230,168,51,.25);color:#ffe5a6}
+body.inner:not(.login-page) .confronto-actions{border-color:rgba(220,244,255,.24)}
+body.inner:not(.login-page) .score-sep{color:#9bdcf4}
+body.inner:not(.login-page) .table-wrap{padding:10px;overflow-x:auto}
+body.inner:not(.login-page) .rank-table{border-collapse:separate;border-spacing:0 5px;min-width:800px}
+body.inner:not(.login-page) .rank-table th{background:rgba(4,42,81,.82);color:#cceeff;border:0;padding:15px 9px;font-size:.77rem}
+body.inner:not(.login-page) .rank-table th:first-child{border-radius:12px 0 0 12px}
+body.inner:not(.login-page) .rank-table th:last-child{border-radius:0 12px 12px 0}
+body.inner:not(.login-page) .rank-table td{padding:15px 9px;background:rgba(9,39,73,.5);border:0;color:#eaf6ff;font-variant-numeric:tabular-nums}
+body.inner:not(.login-page) .rank-table tbody tr:nth-child(even),body.inner:not(.login-page) .rank-table tbody tr.is-top{background:transparent}
+body.inner:not(.login-page) .rank-table tbody tr:hover td{background:rgba(38,111,167,.43)}
+body.inner:not(.login-page) .rank-table td:first-child{border-radius:12px 0 0 12px}
+body.inner:not(.login-page) .rank-table td:last-child{border-radius:0 12px 12px 0}
+body.inner:not(.login-page) .rank-table .col-team{color:#fff;font-weight:800;min-width:185px}
+body.inner:not(.login-page) .rank-table .col-pts{color:#fff;font-size:1.25rem;font-weight:900;background:rgba(0,139,218,.38)}
+body.inner:not(.login-page) .pos-badge{background:rgba(131,208,255,.18);color:#fff;border:1px solid rgba(215,245,255,.25)}
+body.inner:not(.login-page) .rank-table tbody tr:first-child .pos-badge{background:linear-gradient(135deg,#ffda7c,#a97717);color:#172336;border:0}
+body.inner:not(.login-page) .rank-table tbody tr:nth-child(2) .pos-badge{background:linear-gradient(135deg,#f0f7ff,#7d9bb6);color:#172336;border:0}
+body.inner:not(.login-page) .rank-table tbody tr:nth-child(3) .pos-badge{background:linear-gradient(135deg,#eab98c,#9a5c35);color:#172336;border:0}
+body.inner:not(.login-page) .sg-pos{color:#7dffbc!important}body.inner:not(.login-page) .sg-neg{color:#ff9caa!important}
+.standings-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.standings-heading h2{font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3vw,2.25rem);color:#fff}
+.standings-heading p{color:#c5dfef;font-size:.86rem}
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.guide-card{padding:25px}
+.guide-tiebreak{grid-column:1/-1}
+.guide-header{display:flex;align-items:center;gap:14px;margin-bottom:19px}
+.guide-icon{width:43px;height:43px;flex:none;display:grid;place-items:center;border:1px solid rgba(178,238,255,.4);border-radius:13px;background:rgba(44,178,236,.18);color:#9aeeff;font-size:1.6rem}
+.guide-card h3{font-family:'Oswald',sans-serif;font-size:1.5rem;line-height:1.2}
+.abbr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 15px}
+.abbr-grid>div{display:flex;align-items:center;gap:9px;min-width:0}
+.abbr-grid b{display:grid;place-items:center;flex:0 0 44px;min-height:33px;background:rgba(42,164,234,.2);border:1px solid rgba(167,233,255,.3);border-radius:9px;color:#c9f5ff;font-size:.78rem}
+.abbr-grid span,.score-rule span{color:#e6f3ff;font-size:.84rem;line-height:1.35}
+.scoring-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.score-rule{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(8,52,84,.4);border:1px solid rgba(220,244,255,.19);border-radius:14px}
+.score-rule strong{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#0fc5e6,#075ba8);font-size:1.45rem;color:#fff}
+.guide-note{margin-top:17px;color:#c7e4f6;font-size:.86rem;line-height:1.65}
+.guide-tiebreak>p{color:#d3eafa;margin-bottom:15px}
+.tiebreak-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;counter-reset:tie;padding:0}
+.tiebreak-list li{counter-increment:tie;display:flex;align-items:center;gap:11px;padding:12px;background:rgba(12,59,95,.38);border:1px solid rgba(219,244,255,.2);border-radius:13px;font-size:.86rem}
+.tiebreak-list li::before{content:counter(tie);display:grid;place-items:center;flex:0 0 28px;height:28px;border-radius:50%;background:#138cd1;color:white;font-weight:800}
+@media(max-width:850px){.guide-grid{grid-template-columns:1fr}.guide-tiebreak{grid-column:auto}.tiebreak-list{grid-template-columns:1fr 1fr}.standings-heading{align-items:start;flex-direction:column}}
+@media(max-width:560px){body.inner:not(.login-page) .page-hero-content{padding:1.2rem}body.inner:not(.login-page) .page-title{font-size:clamp(2.3rem,10vw,3.5rem)}body.inner:not(.login-page) .hero-stats>div{flex:1 1 120px}.guide-card{padding:18px}.abbr-grid,.scoring-grid,.tiebreak-list{grid-template-columns:1fr}.guide-card h3{font-size:1.3rem}body.inner:not(.login-page){background-attachment:scroll}}
+
+/* Refinamento final: mesmo vidro cristalino do login nas páginas internas. */
+body.inner:not(.login-page) {--glass:rgba(9,29,53,.22);--glass-line:rgba(255,255,255,.68);--glass-shadow:0 25px 75px rgba(4,21,42,.23),inset 0 1px 0 rgba(255,255,255,.22)}
+body.inner:not(.login-page)::before{background:linear-gradient(125deg,rgba(5,20,38,.22),rgba(7,25,47,.08) 50%,rgba(5,20,38,.26))}
+body.inner:not(.login-page) .card,body.inner:not(.login-page) .confronto-card,body.inner:not(.login-page) .team-card,body.inner:not(.login-page) .table-wrap,body.inner:not(.login-page) .legend,body.inner:not(.login-page) .empty-state,body.inner:not(.login-page) .guide-card,body.inner:not(.login-page) .page-hero-content{background:rgba(9,29,53,.22)!important;border:1px solid rgba(255,255,255,.62)!important;border-radius:24px!important;box-shadow:var(--glass-shadow)!important;-webkit-backdrop-filter:blur(10px) saturate(135%)!important;backdrop-filter:blur(10px) saturate(135%)!important}
+body.inner:not(.login-page) .nav{background:rgba(9,29,53,.3)!important;border-bottom:1px solid rgba(255,255,255,.42)!important}
+body.inner:not(.login-page) .rank-table td{background:rgba(9,29,53,.19)!important;color:#fff}
+body.inner:not(.login-page) .rank-table th,body.inner:not(.login-page) .rank-table th.col-team{color:#fff!important;background:rgba(5,48,102,.74)!important}
+body.inner:not(.login-page) .abbr-grid b,body.inner:not(.login-page) .score-rule,body.inner:not(.login-page) .tiebreak-list li{background:rgba(9,29,53,.19)!important}
+body.inner:not(.login-page) .guide-scoring .scoring-grid{align-content:center;flex:1}
+body.inner:not(.login-page) .guide-scoring{display:flex;flex-direction:column}
+body.inner:not(.login-page) .guide-scoring .score-rule{min-height:72px}
+
+/* Titulos padronizados: mesmo desenho da Classificacao, azul da pagina inicial.
+   Restrito as paginas internas; nao altera login nem home. */
+body.inner:not(.login-page) .page-title,
+body.inner:not(.login-page) .card-title,
+body.inner:not(.login-page) .section-title,
+body.inner:not(.login-page) .standings-heading h2,
+body.inner:not(.login-page) .guide-header h3,
+body.inner:not(.login-page) .legend h3,
+body.inner:not(.login-page) .team-card h3 {
+  font-family:'Oswald',sans-serif;
+  font-weight:700;
+  color:#1554bd !important;
+  text-shadow:0 1px 2px rgba(255,255,255,.55),0 0 12px rgba(255,255,255,.32);
+}
+body.inner:not(.login-page) .page-title .outline {
+  color:transparent !important;
+  -webkit-text-stroke:1.5px #1554bd !important;
+  text-shadow:none;
+}
+
+
+/* Componentes da nova gestao de times (somente estrutura). */
+/* ===== GESTÃO DE TIMES — APRESENTAÇÃO CINEMATOGRÁFICA ===== */
+
+.inner .teams-admin-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #092b69;
+    color: #fff;
+}
+
+.inner .teams-admin-hero__image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,28,72,.94),
+            rgba(8,48,115,.68),
+            rgba(8,48,115,.22)
+        ),
+        url('../img/hero-subzero.jpg') center 38%/cover no-repeat;
+    transform: scale(1.025);
+}
+
+.inner .teams-admin-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        0deg,
+        rgba(8,39,96,.85),
+        transparent 65%
+    );
+}
+
+.inner .teams-admin-hero__content {
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+}
+
+.inner .teams-admin-hero .eyebrow {
+    color: #8feaff;
+}
+
+.inner .teams-admin-hero .page-title {
+    color: #fff;
+    font-size: clamp(3.1rem, 8vw, 6rem);
+    letter-spacing: .025em;
+}
+
+.inner .teams-admin-hero .page-title span {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #d7efff;
+}
+
+.inner .teams-admin-hero .page-lead {
+    color: #e0edff;
+    max-width: 38rem;
+}
+
+.inner .teams-admin-counter {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-top: 1.5rem;
+    color: #d9eaff;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .78rem;
+}
+
+.inner .teams-admin-counter strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.inner .teams-admin-section {
+    padding-top: 2.8rem;
+}
+
+/* FORMULÁRIO */
+
+.inner .team-form-panel {
+    display: grid;
+    grid-template-columns: minmax(220px,.8fr) minmax(0,1.5fr);
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(130deg,#fff,#edf5ff);
+    border: 1px solid #d4e4f7;
+    box-shadow: 0 18px 45px rgba(15,61,126,.1);
+    margin-bottom: 3.2rem;
+}
+
+.inner .team-form-panel__index {
+    display: block;
+    color: #2794b4;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.inner .team-form-panel__heading h2,
+.inner .teams-admin-heading h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #124aab;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin: .45rem 0;
+}
+
+.inner .team-form-panel__heading p,
+.inner .teams-admin-heading > p {
+    color: #617b98;
+    font-size: .9rem;
+    max-width: 25rem;
+}
+
+.inner .team-create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: end;
+}
+
+.inner .team-create-form .field {
+    min-width: 0;
+}
+
+.inner .team-create-form .field span {
+    color: #476483;
+    text-transform: uppercase;
+    font-size: .72rem;
+    letter-spacing: .08em;
+}
+
+.inner .team-create-form .field span small {
+    display: block;
+    font-size: .65rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+.inner .team-create-form input[type="text"],
+.inner .team-create-form input[type="file"] {
+    width: 100%;
+    min-height: 48px;
+    background: #f8fbff;
+    border: 1px solid #c9d9ec;
+    color: #244563;
+}
+
+.inner .team-create-form input[type="file"] {
+    font-size: .76rem;
+    padding: .55rem;
+}
+
+.inner .team-submit {
+    grid-column: 1/-1;
+    justify-self: start;
+    border: 0;
+    background: #1450b8;
+    color: #fff;
+    padding: .9rem 1.4rem;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: .08em;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(20,80,184,.2);
+    transition: .2s;
+}
+
+.inner .team-submit span {
+    margin-left: 1rem;
+}
+
+.inner .team-submit:hover {
+    background: #0d3a8c;
+    transform: translateY(-2px);
+}
+
+/* TÍTULO DAS EQUIPES */
+
+.inner .teams-admin-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+.inner .teams-admin-heading h2 {
+    font-size: 2rem;
+}
+
+/* CARDS DOS TIMES */
+
+.inner .teams-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 1.2rem;
+}
+
+.inner .team-admin-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #d6e4f3;
+    box-shadow: 0 14px 35px rgba(10,48,105,.1);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.inner .team-admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 42px rgba(10,48,105,.18);
+}
+
+.inner .team-admin-card__visual {
+    position: relative;
+    min-height: 260px;
+    aspect-ratio: 16/9;
+    background: #124aab center 38%/cover no-repeat;
+    isolation: isolate;
+    color: #fff;
+}
+
+.inner .team-admin-card__visual:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,32,77,.78),
+            rgba(12,64,143,.12)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(5,26,66,.92),
+            transparent 75%
+        );
+}
+
+.inner .team-admin-card__visual:after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255,255,255,.22);
+    pointer-events: none;
+}
+
+.inner .team-admin-card__number {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: .85rem;
+    letter-spacing: .15em;
+    color: #d7eaff;
+}
+
+.inner .team-admin-card__placeholder {
+    position: absolute;
+    right: 1.4rem;
+    top: 1.2rem;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(1.2rem,3vw,2rem);
+    letter-spacing: .08em;
+    color: rgba(255,255,255,.16);
+}
+
+.inner .team-admin-card__title {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.4rem;
+}
+
+.inner .team-admin-card__title h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(1.5rem,3vw,2.35rem);
+    line-height: 1.05;
+    text-shadow: 0 3px 18px rgba(0,0,0,.3);
+}
+
+.inner .team-admin-card__title p {
+    color: #d8e8ff;
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-top: .45rem;
+}
+
+/* BOTÕES DOS CARDS */
+
+.inner .team-admin-card__tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    padding: 1rem 1.1rem;
+}
+
+.inner .team-photo-update {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.inner .team-photo-update__label {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    color: #174b8e;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.inner .team-photo-update__label input {
+    max-width: 180px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: .68rem;
+    color: #607995;
+}
+
+.inner .team-tool-button,
+.inner .team-delete-button {
+    border: 1px solid #b9cce2;
+    background: #f4f8fd;
+    color: #164b91;
+    padding: .55rem .75rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: .72rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.inner .team-tool-button:hover {
+    background: #1450b8;
+    color: #fff;
+}
+
+.inner .team-delete-button {
+    color: #ad3543;
+    border-color: #e8b8bf;
+    background: #fff;
+}
+
+.inner .team-delete-button:hover {
+    background: #ad3543;
+    color: #fff;
+}
+
+.inner .teams-admin-empty {
+    grid-column: 1/-1;
+    padding: 3rem;
+    text-align: center;
+    background: #fff;
+    border: 1px dashed #b8cde5;
+    color: #617b98;
+}
+
+/* IMAGEM RESERVA NA HOME */
+
+.home .gcard__img--fallback {
+    background: linear-gradient(145deg,#164fae,#071e50);
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:800px) {
+    .inner .team-form-panel {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .inner .teams-admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inner .teams-admin-hero {
+        min-height: 300px;
+    }
+}
+
+@media(max-width:520px) {
+    .inner .team-create-form {
+        grid-template-columns: 1fr;
+    }
+
+    .inner .team-submit {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .inner .teams-admin-heading {
+        display: block;
+    }
+
+    .inner .team-admin-card__visual {
+        min-height: 220px;
+    }
+
+    .inner .team-admin-card__tools {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .inner .team-photo-update {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ===== AJUSTE DE LARGURA E ALINHAMENTO — TIMES ===== */
+
+/* Aumenta a largura da área de conteúdo */
+.inner .teams-admin-section {
+    width: calc(100% - 80px);
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Formulário mais largo e organizado */
+.inner .team-form-panel {
+    width: 100%;
+    grid-template-columns: 230px minmax(0, 1fr);
+    align-items: center;
+    gap: 28px;
+    padding: 28px;
+}
+
+/* Campos e botão na mesma linha */
+.inner .team-create-form {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(220px, 1fr) auto;
+    align-items: end;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Campos com a mesma altura */
+.inner .team-create-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    margin: 0;
+}
+
+.inner .team-create-form input[type="text"],
+.inner .team-create-form input[type="file"] {
+    width: 100%;
+    height: 48px;
+    min-height: 48px;
+    box-sizing: border-box;
+}
+
+/* Botão ao lado dos campos */
+.inner .team-submit {
+    grid-column: auto;
+    height: 48px;
+    min-width: 155px;
+    padding: 0 18px;
+    margin: 0;
+    white-space: nowrap;
+    align-self: end;
+}
+
+/* Cards ocupam melhor o espaço disponível */
+.inner .teams-admin-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.inner .team-admin-card {
+    width: 100%;
+    min-width: 0;
+}
+
+.inner .team-admin-card__visual {
+    width: 100%;
+    min-height: 300px;
+}
+
+/* Título e descrição da seção */
+.inner .teams-admin-heading {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 22px;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 900px) {
+    .inner .teams-admin-section {
+        width: calc(100% - 40px);
+    }
+
+    .inner .team-form-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .inner .team-create-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .inner .team-submit {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 550px) {
+    .inner .teams-admin-section {
+        width: calc(100% - 28px);
+    }
+
+    .inner .team-form-panel {
+        padding: 18px;
+    }
+
+    .inner .team-create-form {
+        grid-template-columns: 1fr;
+    }
+
+    .inner .team-submit {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .inner .teams-admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inner .team-admin-card__visual {
+        min-height: 230px;
+    }
+}
+
+
+
+
+/* SUBZERO - estilo preservado: vidro transparente nas paginas internas */
+body.inner:not(.login-page) .teams-admin-hero{min-height:260px;background:transparent!important}
+body.inner:not(.login-page) .teams-admin-hero__image,
+body.inner:not(.login-page) .teams-admin-hero__shade{display:none!important}
+body.inner:not(.login-page) .teams-admin-hero__content{padding-top:42px;padding-bottom:30px}
+body.inner:not(.login-page) .teams-admin-hero .page-title,
+body.inner:not(.login-page) .teams-admin-hero .page-title span,
+body.inner:not(.login-page) .page-title{font-family:'Anton',sans-serif!important;font-weight:400!important;font-size:clamp(2.8rem,8vw,5.5rem)!important;line-height:1!important;letter-spacing:.012em!important;color:#1554bd!important;text-shadow:0 2px 12px rgba(255,255,255,.5)!important}
+body.inner:not(.login-page) .page-title .outline,
+body.inner:not(.login-page) .teams-admin-hero .page-title .outline{color:transparent!important;-webkit-text-stroke:1.5px #1554bd!important;text-shadow:none!important}
+body.inner:not(.login-page) .teams-admin-counter,
+body.inner:not(.login-page) .team-form-panel,
+body.inner:not(.login-page) .team-admin-card,
+body.inner:not(.login-page) .teams-admin-empty{background:rgba(9,29,53,.22)!important;border:1px solid rgba(255,255,255,.62)!important;border-radius:24px!important;box-shadow:0 25px 75px rgba(4,21,42,.23),inset 0 1px 0 rgba(255,255,255,.22)!important;backdrop-filter:blur(10px) saturate(135%)!important;-webkit-backdrop-filter:blur(10px) saturate(135%)!important}
+body.inner:not(.login-page) .team-admin-card__tools{background:transparent!important;border-color:rgba(255,255,255,.28)!important}
+body.inner:not(.login-page) .team-admin-card__visual{border-radius:22px 22px 0 0!important}
+body.inner:not(.login-page) .team-form-panel__heading h2,
+body.inner:not(.login-page) .teams-admin-heading h2{color:#1554bd!important;font-family:'Oswald',sans-serif!important;text-shadow:0 1px 3px rgba(255,255,255,.45)!important}
+body.inner:not(.login-page) .team-form-panel__heading p,
+body.inner:not(.login-page) .teams-admin-heading p,
+body.inner:not(.login-page) .team-admin-card__tools,
+body.inner:not(.login-page) .team-photo-update__label,
+body.inner:not(.login-page) .team-create-form .field span{color:#f1f8ff!important}
+body.inner:not(.login-page) .team-create-form input[type=text],
+body.inner:not(.login-page) .team-create-form input[type=file]{background:rgba(8,29,55,.32)!important;border:1px solid rgba(255,255,255,.35)!important;color:#fff!important;border-radius:12px!important}
+body.inner:not(.login-page) .team-create-form input::placeholder{color:rgba(255,255,255,.7)!important}
+body.inner:not(.login-page) .team-tool-button,
+body.inner:not(.login-page) .team-delete-button{border-radius:12px!important}
+
+
+/* Gestão de Times — padronização com os cards de vidro das páginas internas */
+body.inner:not(.login-page) .teams-admin-section{width:calc(100% - 48px);max-width:1240px;margin-inline:auto;padding-top:16px}
+body.inner:not(.login-page) .teams-admin-hero{min-height:0!important}
+body.inner:not(.login-page) .teams-admin-hero__content{padding-top:34px!important;padding-bottom:24px!important}
+body.inner:not(.login-page) .teams-admin-hero .page-lead{max-width:760px;color:#f6fbff;text-shadow:0 1px 4px rgba(0,20,50,.65)}
+body.inner:not(.login-page) .teams-admin-hero .eyebrow{color:#e4f7ff}
+body.inner:not(.login-page) .teams-admin-counter{display:inline-flex;padding:12px 20px;margin-top:20px;gap:12px}
+body.inner:not(.login-page) .teams-management-layout{display:grid;grid-template-columns:minmax(300px,.86fr) minmax(0,1.5fr);align-items:start;gap:24px}
+body.inner:not(.login-page) .team-form-panel{display:block!important;margin:0!important;padding:26px!important;min-width:0}
+body.inner:not(.login-page) .team-form-panel__heading{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.25)}
+body.inner:not(.login-page) .team-form-panel__index{color:#bcecff;font-weight:700;letter-spacing:.12em}
+body.inner:not(.login-page) .team-form-panel__heading h2,body.inner:not(.login-page) .teams-admin-heading h2{color:#c7e8ff!important;text-shadow:0 2px 10px rgba(0,35,90,.65)!important;font-size:clamp(1.4rem,2vw,1.85rem)}
+body.inner:not(.login-page) .team-form-panel__heading p,body.inner:not(.login-page) .teams-admin-heading>p{color:#eef7ff!important;max-width:none;line-height:1.55}
+body.inner:not(.login-page) .team-create-form{display:flex!important;flex-direction:column;align-items:stretch;gap:18px!important}
+body.inner:not(.login-page) .team-create-form .field{width:100%;gap:8px}
+body.inner:not(.login-page) .team-create-form input[type=text],body.inner:not(.login-page) .team-create-form input[type=file]{width:100%;height:auto;min-height:50px;background:rgba(5,28,57,.35)!important;border:1px solid rgba(219,239,255,.58)!important;border-radius:14px!important;padding:13px;color:#fff!important}
+body.inner:not(.login-page) .team-submit{width:100%!important;min-height:52px;grid-column:auto!important;margin:4px 0 0;border-radius:14px!important;background:linear-gradient(125deg,#1168ce,#064398);color:white;box-shadow:0 10px 22px rgba(0,35,90,.3)}
+body.inner:not(.login-page) .teams-management-list{min-width:0;padding:24px;border:1px solid rgba(255,255,255,.62);border-radius:24px;background:rgba(9,29,53,.22);box-shadow:0 25px 75px rgba(4,21,42,.23);backdrop-filter:blur(10px) saturate(135%);-webkit-backdrop-filter:blur(10px) saturate(135%)}
+body.inner:not(.login-page) .teams-admin-heading{display:block;width:100%;margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.26)}
+body.inner:not(.login-page) .teams-admin-heading>p{margin-top:8px}
+body.inner:not(.login-page) .teams-admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%}
+body.inner:not(.login-page) .team-admin-card{overflow:hidden;border-radius:18px!important;background:rgba(9,29,53,.24)!important;box-shadow:0 12px 28px rgba(0,24,55,.2)!important}
+body.inner:not(.login-page) .team-admin-card__visual{min-height:205px!important;border-radius:17px 17px 0 0!important;background-position:center;background-size:cover}
+body.inner:not(.login-page) .team-admin-card__title h3{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.75)}
+body.inner:not(.login-page) .team-admin-card__title p{color:#e8f4ff}
+body.inner:not(.login-page) .team-admin-card__tools{padding:14px;gap:10px}
+body.inner:not(.login-page) .team-photo-update{min-width:0}
+body.inner:not(.login-page) .team-photo-update__label{border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(8,35,72,.3);padding:10px}
+body.inner:not(.login-page) .team-tool-button{background:#1154b8;color:#fff;border:1px solid rgba(255,255,255,.4)}
+body.inner:not(.login-page) .team-delete-button{background:rgba(166,23,43,.78);color:#fff;border:1px solid rgba(255,255,255,.28)}
+@media(max-width:1000px){body.inner:not(.login-page) .teams-management-layout{grid-template-columns:1fr}body.inner:not(.login-page) .teams-admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){body.inner:not(.login-page) .teams-admin-section{width:calc(100% - 28px)}body.inner:not(.login-page) .teams-admin-grid{grid-template-columns:1fr}body.inner:not(.login-page) .teams-management-list,body.inner:not(.login-page) .team-form-panel{padding:18px!important}}
+
+/* Gestão dos Times: somente cabeçalho alinhado ao da Classificação.
+   O restante do layout e o vidro dos cards permanecem inalterados. */
+body.inner:not(.login-page) .teams-admin-hero--classificacao {
+  position:relative;
+  width:calc(100% - 48px);
+  max-width:1180px;
+  min-height:0!important;
+  margin:36px auto 0;
+  padding:0;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:25px;
+  background:rgba(125,157,193,.32)!important;
+  box-shadow:0 18px 46px rgba(7,34,74,.18);
+  backdrop-filter:blur(14px) saturate(130%);
+  -webkit-backdrop-filter:blur(14px) saturate(130%);
+  overflow:hidden;
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-hero-overlay {display:none!important}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .teams-admin-hero__content {
+  width:100%;max-width:none;
+  padding:25px 28px 28px!important;
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .eyebrow {color:#b9f3ff!important}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-title {
+  margin:8px 0 12px;
+  font-size:clamp(2.8rem,7vw,5.5rem)!important;
+  color:#1554bd!important;
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-lead {
+  margin:0 0 22px;color:#f5faff!important;
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .hero-stats {
+  display:flex;flex-wrap:wrap;gap:12px;margin-top:0;
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .hero-stats>div {
+  min-width:135px;padding:12px 18px;border-radius:15px;
+  background:rgba(12,43,76,.48);border:1px solid rgba(255,255,255,.15);
+}
+body.inner:not(.login-page) .teams-admin-hero--classificacao .hero-stats strong,
+body.inner:not(.login-page) .teams-admin-hero--classificacao .hero-stats span {color:#fff!important}
+@media(max-width:620px){
+ body.inner:not(.login-page) .teams-admin-hero--classificacao{width:calc(100% - 28px);margin-top:20px}
+ body.inner:not(.login-page) .teams-admin-hero--classificacao .teams-admin-hero__content{padding:22px 18px!important}
+}
+
+/* 2026-11-18 — Gestão dos Times: formulário horizontal e cards alinhados.
+   Escopo exclusivo da gestão: preserva cabeçalho, vidro, login e demais páginas. */
+body.inner:not(.login-page) .teams-admin-section {
+  width: calc(100% - 48px) !important;
+  max-width: 1220px !important;
+  margin-inline: auto !important;
+  box-sizing: border-box;
+}
+body.inner:not(.login-page) .teams-management-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  width: 100%;
+}
+body.inner:not(.login-page) .team-form-panel,
+body.inner:not(.login-page) .teams-management-list {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+}
+body.inner:not(.login-page) .team-form-panel {
+  padding: 26px 28px !important;
+}
+body.inner:not(.login-page) .team-form-panel__heading {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+}
+body.inner:not(.login-page) .team-create-form {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(185px, .6fr) !important;
+  flex-direction: unset !important;
+  align-items: end !important;
+  gap: 18px !important;
+  width: 100%;
+}
+body.inner:not(.login-page) .team-create-form .field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+}
+body.inner:not(.login-page) .team-create-form input[type=text],
+body.inner:not(.login-page) .team-create-form input[type=file] {
+  height: 54px !important;
+  min-height: 54px !important;
+  box-sizing: border-box;
+}
+body.inner:not(.login-page) .team-create-form .team-submit {
+  height: 54px !important;
+  min-height: 54px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  align-self: end;
+}
+body.inner:not(.login-page) .teams-management-list {padding: 26px 28px !important;}
+body.inner:not(.login-page) .teams-admin-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+body.inner:not(.login-page) .team-admin-card {width: 100%;min-width: 0;}
+body.inner:not(.login-page) .team-admin-card__visual {min-height: 280px !important;}
+@media(max-width: 900px) {
+  body.inner:not(.login-page) .team-create-form {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+  }
+  body.inner:not(.login-page) .team-create-form .team-submit {
+    grid-column: 1 / -1 !important;
+  }
+}
+@media(max-width: 620px) {
+  body.inner:not(.login-page) .teams-admin-section {width: calc(100% - 28px) !important;}
+  body.inner:not(.login-page) .team-form-panel,
+  body.inner:not(.login-page) .teams-management-list {padding: 18px !important;}
+  body.inner:not(.login-page) .team-create-form {grid-template-columns: 1fr !important;}
+  body.inner:not(.login-page) .team-create-form .team-submit {grid-column: auto !important;}
+  body.inner:not(.login-page) .teams-admin-grid {grid-template-columns: 1fr !important;}
+  body.inner:not(.login-page) .team-admin-card__visual {min-height: 240px !important;}
+}
+
+/* Ajuste pontual: títulos dos cards no azul de "Novo Confronto".
+   Não altera os títulos grandes das páginas nem o login/home. */
+body.inner:not(.login-page) .card-title,
+body.inner:not(.login-page) .team-form-panel__heading h2,
+body.inner:not(.login-page) .teams-admin-heading h2,
+body.inner:not(.login-page) .guide-card h3,
+body.inner:not(.login-page) .legend h3 {
+  color: #1554bd !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .035em !important;
+  text-shadow: 0 1px 8px rgba(255,255,255,.25) !important;
+}
+
+/* Gestão: remover o card único que envolvia todas as equipes.
+   Cada equipe permanece em seu próprio card de vidro. */
+body.inner:not(.login-page) .teams-management-list {
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+body.inner:not(.login-page) .teams-admin-heading {
+  padding: 4px 2px 16px !important;
+  margin: 0 0 20px !important;
+  background: transparent !important;
+}
+body.inner:not(.login-page) .teams-admin-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+}
+body.inner:not(.login-page) .team-admin-card {
+  background: rgba(9,29,53,.22) !important;
+  border: 1px solid rgba(255,255,255,.62) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  backdrop-filter: blur(10px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(135%) !important;
+}
+@media (max-width: 620px) {
+  body.inner:not(.login-page) .teams-admin-grid {grid-template-columns: 1fr !important;}
+}
+
+/* HOME — refinamento pontual: cantos e botoes no padrao do login.
+   Escopo exclusivo da pagina inicial; nao modifica login ou paginas internas. */
+.home .gcard {
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.38);
+  box-shadow:0 14px 36px rgba(8,36,87,.19);
+}
+.home .gcard::before {border-radius:inherit}
+.home .hero__btn,
+.home .gcard__go {
+  background:linear-gradient(115deg,#42c8ff,#1684ed);
+  color:#06223c;
+  border-radius:12px;
+  box-shadow:0 10px 26px rgba(10,126,225,.25);
+  font-weight:800;
+}
+.home .hero__btn:hover,
+.home .hero__btn:focus-visible,
+.home .gcard__go:hover,
+.home .gcard__go:focus-visible {
+  background:linear-gradient(115deg,#78dcff,#42a9ff);
+  color:#06223c;
+}
+
+
+/* ==========================================================
+   SUBZERO — AJUSTES DA PÁGINA GESTÃO DOS TIMES
+   ========================================================== */
+
+/* Mesma largura para o cabeçalho e os cards */
+body.inner:not(.login-page) .teams-admin-hero--classificacao,
+body.inner:not(.login-page) .teams-admin-section {
+    width: calc(100vw - 48px) !important;
+    max-width: 1180px !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Espaçamento da seção */
+body.inner:not(.login-page) .teams-admin-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 18px !important;
+}
+
+/* Espaçamento interno do cabeçalho */
+body.inner:not(.login-page) .teams-admin-hero--classificacao .teams-admin-hero__content {
+    padding: 30px 28px 28px !important;
+}
+
+/* Texto COPA INTERCLASSE */
+body.inner:not(.login-page) .teams-admin-hero--classificacao .eyebrow {
+    display: block;
+    margin: 0 0 12px !important;
+    color: #e8f8ff !important;
+    font-size: .82rem !important;
+    font-weight: 800 !important;
+    letter-spacing: .18em !important;
+    line-height: 1.5 !important;
+    text-shadow: 0 2px 6px rgba(0, 20, 48, .85) !important;
+}
+
+/* Título GESTÃO DOS TIMES */
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-title {
+    margin: 10px 0 14px !important;
+    line-height: 1.12 !important;
+    color: #1760d2 !important;
+    text-shadow: 0 3px 12px rgba(4, 28, 76, .45) !important;
+}
+
+/* Palavra TIMES */
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-title .outline {
+    color: #eaf7ff !important;
+    -webkit-text-stroke: 1.4px #1554bd !important;
+    text-shadow: 0 2px 8px rgba(4, 28, 76, .42) !important;
+}
+
+/* Descrição do cabeçalho */
+body.inner:not(.login-page) .teams-admin-hero--classificacao .page-lead {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    line-height: 1.55 !important;
+    text-shadow: 0 2px 6px rgba(0, 20, 48, .9) !important;
+}
+
+/* Card adicionar time */
+body.inner:not(.login-page) .team-form-panel {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+/* Títulos dos cards */
+body.inner:not(.login-page) .team-form-panel__heading h2,
+body.inner:not(.login-page) .teams-admin-heading h2 {
+    color: #eaf7ff !important;
+    font-size: clamp(1.45rem, 2.2vw, 1.9rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    text-shadow: 0 2px 7px rgba(0, 25, 65, .85) !important;
+}
+
+/* Descrições mais legíveis */
+body.inner:not(.login-page) .team-form-panel__heading p,
+body.inner:not(.login-page) .teams-admin-heading > p,
+body.inner:not(.login-page) .team-admin-card__title p {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    line-height: 1.55 !important;
+    text-shadow: 0 2px 5px rgba(0, 20, 48, .85) !important;
+}
+
+/* Identificação das seções */
+body.inner:not(.login-page) .team-form-panel__index {
+    color: #c9f1ff !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 5px rgba(0, 20, 48, .9) !important;
+}
+
+/* Todos os cards das equipes com a mesma largura */
+
+/* Cards das equipes — layout original */
+body.inner:not(.login-page) .teams-admin-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 22px !important;
+}
+
+@media (max-width: 620px) {
+    body.inner:not(.login-page) .teams-admin-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* Card individual */
+body.inner:not(.login-page) .team-admin-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Nome das equipes */
+body.inner:not(.login-page) .team-admin-card__title h3 {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 9px rgba(0, 0, 0, .9) !important;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 620px) {
+
+    body.inner:not(.login-page) .teams-admin-hero--classificacao,
+    body.inner:not(.login-page) .teams-admin-section {
+        width: calc(100vw - 28px) !important;
+    }
+
+    body.inner:not(.login-page) .teams-admin-hero--classificacao .teams-admin-hero__content {
+        padding: 26px 18px 22px !important;
+    }
+
+    body.inner:not(.login-page) .teams-admin-hero--classificacao .page-title {
+        margin-top: 12px !important;
+        font-size: clamp(2.35rem, 11vw, 3.4rem) !important;
+    }
+}
+
+
+/* ==========================================================
+   SUBZERO — PADRONIZAÇÃO DOS TÍTULOS E CARDS DE VIDRO
+   Aplicação: páginas internas, exceto login
+   ========================================================== */
+
+body.inner:not(.login-page) {
+    --glass: rgba(9, 29, 53, .22);
+    --glass-line: rgba(255, 255, 255, .62);
+    --glass-shadow:
+        0 25px 75px rgba(4, 21, 42, .23),
+        inset 0 1px 0 rgba(255, 255, 255, .22);
+}
+
+/* CABEÇALHOS DAS PÁGINAS */
+body.inner:not(.login-page) .page-hero {
+    background: transparent !important;
+    padding: clamp(2.5rem, 5vw, 4rem) 0 1.2rem !important;
+}
+
+body.inner:not(.login-page) .page-hero-content {
+    padding: 30px 32px !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 24px !important;
+    background: var(--glass) !important;
+    box-shadow: var(--glass-shadow) !important;
+    backdrop-filter: blur(12px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(135%) !important;
+}
+
+/* TEXTO SUPERIOR */
+body.inner:not(.login-page) .page-hero .eyebrow {
+    color: #a9eaff !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: .82rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .18em !important;
+    text-transform: uppercase;
+    margin-bottom: 12px !important;
+}
+
+/* TÍTULO PRINCIPAL */
+body.inner:not(.login-page) .page-hero .page-title {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: clamp(3rem, 7vw, 5.5rem) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: .015em !important;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    margin: 8px 0 14px !important;
+    text-shadow: 0 4px 20px rgba(0, 15, 35, .4) !important;
+}
+
+/* SEGUNDA PARTE DO TÍTULO */
+body.inner:not(.login-page) .page-hero .page-title .outline {
+    color: transparent !important;
+    -webkit-text-stroke: 1.5px #a9eaff !important;
+    text-shadow: none !important;
+}
+
+/* DESCRIÇÃO */
+body.inner:not(.login-page) .page-hero .page-lead {
+    color: #e1f2ff !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    margin-top: 10px !important;
+    max-width: 45rem;
+    text-shadow: 0 2px 8px rgba(0, 15, 35, .4);
+}
+
+/* CARDS TRANSPARENTES */
+body.inner:not(.login-page) .card,
+body.inner:not(.login-page) .confronto-card,
+body.inner:not(.login-page) .table-wrap,
+body.inner:not(.login-page) .legend,
+body.inner:not(.login-page) .guide-card,
+body.inner:not(.login-page) .team-card,
+body.inner:not(.login-page) .empty-state {
+    background: var(--glass) !important;
+    border: 1px solid var(--glass-line) !important;
+    border-radius: 22px !important;
+    box-shadow: var(--glass-shadow) !important;
+    backdrop-filter: blur(12px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(135%) !important;
+    color: #f2f9ff !important;
+}
+
+/* TÍTULOS INTERNOS DOS CARDS */
+body.inner:not(.login-page) .card-title,
+body.inner:not(.login-page) .section-title,
+body.inner:not(.login-page) .legend h3,
+body.inner:not(.login-page) .guide-card h3 {
+    font-family: 'Oswald', sans-serif !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* ESTATÍSTICAS DO CABEÇALHO */
+body.inner:not(.login-page) .hero-stats > div {
+    border: 1px solid rgba(255, 255, 255, .3) !important;
+    background: rgba(255, 255, 255, .07);
+    border-radius: 12px;
+}
+
+body.inner:not(.login-page) .hero-stats strong {
+    color: #ffffff !important;
+}
+
+body.inner:not(.login-page) .hero-stats span {
+    color: #cceaff !important;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 620px) {
+    body.inner:not(.login-page) .page-hero-content {
+        padding: 24px 20px !important;
+        border-radius: 20px !important;
+    }
+
+    body.inner:not(.login-page) .page-hero .page-title {
+        font-size: clamp(2.5rem, 11vw, 3.6rem) !important;
+    }
+
+    body.inner:not(.login-page) .page-hero .page-lead {
+        font-size: .92rem !important;
+    }
+}
+/* GESTÃO DE TIMES — REMOVER SOMENTE O CARD EXTERNO */
+
+body.inner:not(.login-page) .teams-admin-hero--classificacao {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: none !important;
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    outline: none !important;
+    overflow: visible !important;
+}
+
+/* MANTER O CARD INTERNO */
+body.inner:not(.login-page)
+.teams-admin-hero--classificacao
+.teams-admin-hero__content {
+    background: rgba(9, 29, 53, .22) !important;
+    border: 1px solid rgba(255, 255, 255, .62) !important;
+    border-radius: 24px !important;
+
+    box-shadow: 0 25px 75px rgba(4, 21, 42, .23) !important;
+
+    backdrop-filter: blur(12px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(135%) !important;
+}
+
+
+/* ==========================================================
+   SUBZERO — PADRONIZAÇÃO DOS SUBTÍTULOS DOS PAINÉIS
+   Referência: NOVO CONFRONTO
+   ========================================================== */
+
+body.inner:not(.login-page) .card-title,
+body.inner:not(.login-page) .standings-heading h2,
+body.inner:not(.login-page) .team-form-panel__heading h2,
+body.inner:not(.login-page) .teams-admin-heading h2 {
+
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+
+    color: #1554bd !important;
+
+    text-transform: uppercase !important;
+    letter-spacing: .035em !important;
+    line-height: 1.25 !important;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.55),
+        0 0 12px rgba(255,255,255,.32) !important;
+}
+
+/* ==========================================================
+   ESTILOS COMPLEMENTARES PARA AS PÁGINAS NOVAS
+   Mantém integralmente o CSS original do projeto.
+   ========================================================== */
+/* SUBZERO · módulos da Copa: elenco, súmulas, perfis e destaques */
+.match-meta{display:block;width:100%;color:var(--muted);font-size:.82rem;margin-bottom:.25rem}
+.team-name{transition:color .2s}.team-name:hover,.rank-table a:hover{color:var(--ice)}
+.score-roster-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1rem 0}
+.roster-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1rem;background:var(--deep-2);border:1px solid var(--line);border-radius:12px}
+.roster-row span{display:flex;flex-direction:column;font-weight:600}
+.roster-row small{font-size:.78rem;color:var(--muted);font-weight:400}
+.roster-row input{width:76px;text-align:center}
+.actions-row{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.actions-row form{margin:0}
+.team-profile-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:1.2rem;align-items:start}
+.home-shortcuts{padding-top:2rem}
+.shortcut-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.shortcut-card{display:block;padding:1.35rem;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);transition:transform .2s,border-color .2s}
+.shortcut-card:hover{transform:translateY(-4px);border-color:var(--ice)}
+.shortcut-card>span{color:var(--ice);font-weight:800;font-size:.8rem;letter-spacing:.12em}
+.shortcut-card h3{font-size:1.08rem;margin:.6rem 0 .35rem}
+.shortcut-card p{color:var(--muted);font-size:.87rem}
+.awards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.award-card{position:relative;overflow:hidden;min-height:190px;padding:1.5rem;background:linear-gradient(145deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius)}
+.award-card:after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;right:-55px;bottom:-65px;background:rgba(79,195,247,.08)}
+.award-card--wide{grid-column:1/-1;min-height:155px}
+.award-icon{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:11px;background:rgba(79,195,247,.12);color:var(--ice);font-size:1.25rem}
+.award-card p{color:var(--muted);font-size:.84rem;margin-top:.8rem}
+.award-card h2{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.35rem,2.5vw,2rem);margin:.25rem 0}
+.award-card strong{font-size:.88rem;color:var(--ice)}
+.muted-note{color:var(--muted);font-size:.86rem;margin-top:1rem}
+@media(max-width:980px){.shortcut-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-profile-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.score-roster-grid{grid-template-columns:1fr}.awards-grid{grid-template-columns:1fr}.award-card--wide{grid-column:auto}}
+@media(max-width:480px){.shortcut-grid{grid-template-columns:1fr}.nav__inner{padding:.75rem 1rem}.roster-row{padding:.7rem}.roster-row input{width:65px}}
+
+/* SUBZERO · favoritos e estatísticas ampliadas */
+.favorites-layout{max-width:1180px}.favorites-heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin:2.4rem 0 1rem}.favorites-heading h2{font-family:var(--font-display,'Oswald'),sans-serif;font-size:clamp(1.5rem,3vw,2.1rem);margin:.35rem 0 0}.favorites-count,.favorite-type{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:.35rem .75rem;color:var(--ice);font-size:.75rem;font-weight:700;letter-spacing:.08em}.favorites-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.favorite-card{min-width:0;background:linear-gradient(145deg,var(--deep-2),rgba(10,25,43,.92));border:1px solid var(--line);border-radius:16px;padding:1.2rem;box-shadow:0 12px 30px rgba(0,0,0,.13);transition:transform .2s,border-color .2s}.favorite-card:hover{transform:translateY(-3px);border-color:var(--ice)}.favorite-card h3{font-size:1.1rem;line-height:1.4;margin:.85rem 0}.favorite-card p{color:var(--muted);font-size:.9rem;line-height:1.55}.favorite-actions{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin-top:1rem}.favorite-actions form{margin:0}.favorite-add{margin-bottom:1.5rem}.favorite-add .form{align-items:end}.roster-row .field{gap:.25rem;min-width:82px}.roster-row .field input{width:76px}.roster-row{flex-wrap:wrap}.nav__links a.active{white-space:nowrap}@media(max-width:900px){.favorites-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.favorites-grid{grid-template-columns:1fr}.favorites-heading{align-items:start;flex-direction:column}.favorite-add .form{align-items:stretch}.favorite-add .field{width:100%}.roster-row{align-items:flex-start}.roster-row .field{flex:1}.roster-row .field input{width:100%}}
+
+/* Botões de favoritos integrados ao padrão original SUBZERO */
+.favorite-inline-form{display:inline-flex;align-items:center;margin:.25rem 0;vertical-align:middle}
+.favorite-toggle{white-space:nowrap;line-height:1.2}
+.favorite-toggle.is-favorite{border-color:var(--ice);color:var(--ice)}
+.favorite-cell{min-width:115px}
+.team-card-favorite{position:absolute;right:1rem;top:1rem;z-index:2}
+.confronto-head .favorite-inline-form{margin-left:auto}
+.confronto-body .side{gap:.35rem;display:flex;flex-direction:column;align-items:center}
+@media(max-width:760px){.favorite-cell{min-width:0}.confronto-head .favorite-inline-form{margin-left:0}}
+
+
+/* ===== Ajustes da página inicial ===== */
+
+/* Cards dos times */
+.home .gear {
+  background: var(--deep);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.home .gear__head {
+  text-align: left;
+  max-width: var(--maxw);
+}
+
+.home .gear__title {
+  color: var(--ink);
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  letter-spacing: .025em;
+}
+
+.home .gear__track {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  gap: 1.1rem;
+  padding: .5rem 1.4rem;
+}
+
+.home .gcard {
+  flex: 0 0 clamp(245px, 23vw, 300px);
+  aspect-ratio: 4 / 4.7;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.home .gcard__name {
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+}
+
+.home .gcard__note {
+  left: 1rem;
+  bottom: 1.1rem;
+}
+
+.home .gcard__go {
+  right: .8rem;
+  bottom: .8rem;
+}
+
+/* Seção Explore o campeonato */
+.home .home-shortcuts {
+  max-width: none;
+  padding: clamp(3rem, 6vw, 5rem) max(1.4rem, calc((100% - var(--maxw)) / 2));
+  background: var(--deep-2);
+  border-top: 1px solid var(--line);
+}
+
+.home .home-shortcuts .standings-heading {
+  max-width: var(--maxw);
+  margin: 0 auto 1.5rem;
+  align-items: end;
+}
+
+.home .home-shortcuts .standings-heading h2 {
+  color: var(--ink);
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.home .home-shortcuts .standings-heading p {
+  color: var(--muted);
+  max-width: 330px;
+}
+
+.home .shortcut-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home .shortcut-card {
+  min-height: 175px;
+  padding: 1.35rem;
+  border-radius: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.home .shortcut-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ice);
+  background: var(--panel-2);
+}
+
+/* Responsividade */
+@media (max-width: 980px) {
+  .home .shortcut-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .home .gear__head {
+    padding: 0 1.2rem;
+  }
+
+  .home .gcard {
+    flex-basis: 245px;
+  }
+
+  .home .home-shortcuts {
+    padding: 2.8rem 1.2rem;
+  }
+
+  .home .home-shortcuts .standings-heading {
+    align-items: flex-start;
+  }
+
+  .home .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== EXPLORE O CAMPEONATO - FUNDO LOGIN ===== */
+
+.home .home-shortcuts {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-image: url('../img/login-hockey.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Camada escura sobre a fotografia */
+.home .home-shortcuts::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        120deg,
+        rgba(5, 20, 38, 0.48),
+        rgba(7, 25, 47, 0.30),
+        rgba(5, 20, 38, 0.58)
+    );
+}
+
+/* Cards de vidro */
+.home .home-shortcuts .shortcut-card {
+    position: relative;
+
+    background: rgba(9, 29, 53, 0.28) !important;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 0;
+
+    backdrop-filter: blur(15px) saturate(140%);
+    -webkit-backdrop-filter: blur(15px) saturate(140%);
+
+    box-shadow:
+        0 15px 40px rgba(0, 10, 25, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+
+    transition: all .3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.home .home-shortcuts .shortcut-card:hover {
+    background: rgba(180, 225, 255, 0.20) !important;
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-5px);
+
+    box-shadow: 0 18px 45px rgba(0, 10, 25, 0.4);
+}
+
+/* Textos */
+.home .home-shortcuts h2,
+.home .home-shortcuts h3,
+.home .home-shortcuts p {
+    color: #fff;
+}
+
+.home .home-shortcuts .section-kicker {
+    color: #a9e8ff;
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .home .home-shortcuts {
+        background-attachment: scroll;
+    }
+}
